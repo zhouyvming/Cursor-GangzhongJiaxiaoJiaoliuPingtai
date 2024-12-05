@@ -1,0 +1,135 @@
+.container {
+  padding: 20rpx;
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.welcome {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.subject-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+  padding: 10rpx;
+}
+
+.subject-item {
+  aspect-ratio: 1;
+}
+
+.subject-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.subject-box:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.subject-box text {
+  color: #fff;
+  font-size: 48rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+
+.subject-desc {
+  font-size: 24rpx;
+  font-weight: normal;
+  margin-top: 10rpx;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1rpx 2rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 科目特定颜色 */
+.subject-box[data-subject="chinese"] {
+  background: linear-gradient(135deg, #ff6b6b, #ee5253);
+}
+
+.subject-box[data-subject="math"] {
+  background: linear-gradient(135deg, #4ecdc4, #45b7af);
+}
+
+.subject-box[data-subject="english"] {
+  background: linear-gradient(135deg, #45b7d1, #2e86de);
+}
+
+.subject-box[data-subject="physics"] {
+  background: linear-gradient(135deg, #96ceb4, #7dad9d);
+}
+
+.subject-box[data-subject="chemistry"] {
+  background: linear-gradient(135deg, #ffeead, #ffdd59);
+}
+
+.subject-box[data-subject="biology"] {
+  background: linear-gradient(135deg, #d4a5a5, #c17e7e);
+}
+
+.subject-box[data-subject="politics"] {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.subject-box[data-subject="history"] {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.subject-box[data-subject="geography"] {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.subject-box[data-subject="it"] {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.subject-box[data-subject="music"] {
+  background: linear-gradient(135deg, #f1a9a0, #e08283);
+}
+
+.subject-box[data-subject="pe"] {
+  background: linear-gradient(135deg, #26a69a, #00897b);
+} 

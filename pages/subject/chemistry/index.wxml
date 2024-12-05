@@ -1,0 +1,19 @@
+<!--pages/subject/chemistry/index.wxml-->
+<view class="container">
+  <!-- 化学特色工具箱 -->
+  <view class="section" wx:if="{{userInfo.role === 'student'}}">
+    <view class="section-header">
+      <text class="section-title">化学实验室</text>
+    </view>
+    <view class="tools-grid">
+      <view class="tool-item" bindtap="openPeriodicTable">
+        <text class="tool-icon">⚛️</text>
+        <text class="tool-name">元素周期表</text>
+      </view>
+      <view class="tool-item" bindtap="openSafetyGuide">
+        <text class="tool-icon">⚠️</text>
+        <text class="tool-name">安全指南</text>
+      </view>
+    </view>
+  </view>
+</view>

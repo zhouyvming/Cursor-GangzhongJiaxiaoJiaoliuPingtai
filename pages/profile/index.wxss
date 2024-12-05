@@ -1,0 +1,254 @@
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.forum-list {
+  width: 100%;
+  height: 100;
+}
+
+.user-info {
+  width: 90%;
+  padding: 40rpx;
+  background: #fff;
+}
+
+.user-info-content {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 30rpx;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-text {
+  color: #999;
+  font-size: 36rpx;
+  font-weight: normal;
+}
+
+.username {
+  font-size: 32rpx;
+  color: #333;
+  margin-right: 12rpx;
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-text {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.login-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.user-text {
+  display: flex;
+  align-items: center;
+}
+
+.subject-tag {
+  font-size: 16rpx;
+  color: #fff;
+  background-color: #3a7afe;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx 0;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.menu-list {
+  width: 100%;
+  background: #fff;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.iconfont {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  color: #666;
+}
+
+.menu-text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.arrow {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.logout-section {
+  padding: 40rpx 30rpx;
+}
+
+.logout-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 58rpx;
+  background: #ff4d4f;
+  color: #fff;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-weight: normal;
+}
+
+.logout-btn::after {
+  border: none;
+}
+
+.login-box {
+  width: 100%;
+  /* padding: 30rpx 0; */
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50rpx;
+  color: #333;
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 50rpx;
+}
+
+.role-btn {
+  width: 200rpx;
+  height: 60rpx;
+  /* line-height: 80rpx; */
+  border-radius: 25rpx;
+  font-size: 25rpx;
+  /* border: none; */
+  transition: all 0.3s;
+}
+
+.role-btn[data-role="teacher"] {
+  background: #e6f3ff;
+  color: #3a7afe;
+}
+
+.role-btn[data-role="parent"] {
+  background: #fff0f6;
+  color: #eb2f96;
+}
+
+.role-btn[data-role="student"] {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.role-btn[data-role="teacher"].active {
+  background: #3a7afe;
+  color: #fff;
+}
+
+.role-btn[data-role="parent"].active {
+  background: #eb2f96;
+  color: #fff;
+}
+
+.role-btn[data-role="student"].active {
+  background: #52c41a;
+  color: #fff;
+}
+
+.role-btn::after {
+  border: none;
+}
+
+.login-form {
+  margin-top: 30rpx;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.input {
+  width: 100%;
+  height: 88rpx;
+  background: #f5f5f5;
+  border-radius: 44rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.login-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 50rpx;
+  background: #3a7afe;
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+  transition: opacity 0.3s;
+}
+
+.login-btn:active {
+  opacity: 0.8;
+} 

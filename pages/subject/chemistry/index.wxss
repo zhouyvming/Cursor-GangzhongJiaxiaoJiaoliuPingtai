@@ -1,0 +1,6 @@
+@import "../common/index.wxss";
+
+/* 化学特色样式 */
+.tool-item[data-tool="periodic-table"] {
+  background: #f6ffed;
+}

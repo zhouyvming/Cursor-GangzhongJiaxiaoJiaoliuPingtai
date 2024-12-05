@@ -1,0 +1,6 @@
+@import "../common/index.wxss";
+
+/* 物理特色样式 */
+.tool-item[data-tool="simulation"] {
+  background: #e6f7ff;
+}

@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/forum/index",
+    "pages/profile/index",
+    "pages/subject/chinese/index",
+    "pages/subject/math/index",
+    "pages/subject/english/index",
+    "pages/subject/physics/index",
+    "pages/subject/chemistry/index",
+    "pages/subject/biology/index",
+    "pages/subject/politics/index",
+    "pages/subject/history/index",
+    "pages/subject/geography/index",
+    "pages/subject/it/index",
+    "pages/subject/music/index",
+    "pages/subject/pe/index",
+    "pages/teacher/materials/index",
+    "pages/teacher/students/index",
+    "pages/teacher/exam-results/index",
+    "pages/student/forum/index",
+    "pages/student/exam-results/index",
+    "pages/parent/communication/index",
+    "pages/parent/student-progress/index"
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "港中家校交流平台",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f6f7fb",
+    "backgroundTextStyle": "dark",
+    "showNavigationBarBorder": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3a7afe",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "height": "20px",
+    "fontSize": "32px",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/forum/index",
+        "text": "论坛"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+} 

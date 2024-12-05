@@ -1,0 +1,93 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{name}}</text>
+  </view>
+
+  <!-- 教师功能区 -->
+  <block wx:if="{{userInfo.role === 'teacher'}}">
+    <view class="content">
+      <!-- 上传资料按钮 -->
+      <button class="upload-btn" bindtap="showUploadModal">
+        <text class="icon">+</text>
+        <text>上传资料</text>
+      </button>
+
+      <!-- 资料列表 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">教学资料</text>
+          <text class="section-more" bindtap="goToAllMaterials">查看全部</text>
+        </view>
+        <view class="material-list">
+          <material-item 
+            wx:for="{{materials}}" 
+            wx:key="id"
+            item="{{item}}"
+            bind:preview="previewMaterial"
+            bind:download="downloadMaterial"
+          />
+        </view>
+      </view>
+
+      <!-- 班级作业 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">班级作业</text>
+          <text class="section-more" bindtap="goToAllHomework">查看全部</text>
+        </view>
+        <view class="homework-list">
+          <view class="homework-item" wx:for="{{homework}}" wx:key="id">
+            <view class="homework-info">
+              <text class="homework-title">{{item.title}}</text>
+              <text class="homework-meta">截止时间：{{item.deadline}}</text>
+            </view>
+            <view class="homework-status {{item.status === 'active' ? 'active' : ''}}">
+              {{item.status === 'active' ? '进行中' : '已结束'}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 学生功能区 -->
+  <block wx:if="{{userInfo.role === 'student'}}">
+    <view class="content">
+      <!-- 我的作业 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">我的作业</text>
+        </view>
+        <view class="homework-list">
+          <view class="homework-item" wx:for="{{myHomework}}" wx:key="id">
+            <view class="homework-info">
+              <text class="homework-title">{{item.title}}</text>
+              <text class="homework-meta">截止时间：{{item.deadline}}</text>
+            </view>
+            <button class="submit-btn {{item.submitted ? 'submitted' : ''}}" 
+                    bindtap="submitHomework" 
+                    data-id="{{item.id}}">
+              {{item.submitted ? '已提交' : '提交作业'}}
+            </button>
+          </view>
+        </view>
+      </view>
+
+      <!-- 学习资料 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">学习资料</text>
+        </view>
+        <view class="material-list">
+          <material-item 
+            wx:for="{{materials}}" 
+            wx:key="id"
+            item="{{item}}"
+            bind:preview="previewMaterial"
+            bind:download="downloadMaterial"
+          />
+        </view>
+      </view>
+    </view>
+  </block>
+</view> 

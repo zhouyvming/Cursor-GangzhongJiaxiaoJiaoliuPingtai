@@ -1,0 +1,64 @@
+/* pages/subject/english/index.wxss */
+
+/* 英语科目特色样式 */
+.tool-item[data-tool="pronunciation"] {
+  background: #e6f7ff;
+}
+
+.tool-item[data-tool="listening"] {
+  background: #f6ffed;
+}
+
+.container {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.header {
+  background: #fff;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.content {
+  padding: 30rpx;
+}
+
+.section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+  transition: all 0.3s;
+}
+
+.tool-icon {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+}
+
+.tool-name {
+  font-size: 28rpx;
+  color: #333;
+}

@@ -1,0 +1,19 @@
+<!--pages/subject/biology/index.wxml-->
+<view class="container">
+  <!-- 生物特色工具箱 -->
+  <view class="section" wx:if="{{userInfo.role === 'student'}}">
+    <view class="section-header">
+      <text class="section-title">生物实验室</text>
+    </view>
+    <view class="tools-grid">
+      <view class="tool-item" bindtap="openMicroscope">
+        <text class="tool-icon">🔬</text>
+        <text class="tool-name">显微观察</text>
+      </view>
+      <view class="tool-item" bindtap="openEcology">
+        <text class="tool-icon">🌱</text>
+        <text class="tool-name">生态系统</text>
+      </view>
+    </view>
+  </view>
+</view>

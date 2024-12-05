@@ -1,0 +1,36 @@
+<!--pages/subject/geography/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">{{name}}</text>
+  </view>
+
+  <!-- 学生功能区 -->
+  <block wx:if="{{userInfo.role === 'student'}}">
+    <view class="content">
+      <!-- 地理学习工具 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">地理学习工具</text>
+        </view>
+        <view class="tools-grid">
+          <view class="tool-item" bindtap="openMap">
+            <text class="tool-icon">🗺️</text>
+            <text class="tool-name">地图工具</text>
+          </view>
+          <view class="tool-item" bindtap="openWeather">
+            <text class="tool-icon">🌤️</text>
+            <text class="tool-name">气象数据</text>
+          </view>
+          <view class="tool-item" bindtap="openTerrain">
+            <text class="tool-icon">🏔️</text>
+            <text class="tool-name">地形分析</text>
+          </view>
+          <view class="tool-item" bindtap="openResources">
+            <text class="tool-icon">💎</text>
+            <text class="tool-name">资源分布</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

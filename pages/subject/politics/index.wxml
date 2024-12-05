@@ -1,0 +1,36 @@
+<!--pages/subject/politics/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">{{name}}</text>
+  </view>
+
+  <!-- 学生功能区 -->
+  <block wx:if="{{userInfo.role === 'student'}}">
+    <view class="content">
+      <!-- 政治学习工具 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">政治学习工具</text>
+        </view>
+        <view class="tools-grid">
+          <view class="tool-item" bindtap="openNews">
+            <text class="tool-icon">📰</text>
+            <text class="tool-name">时事新闻</text>
+          </view>
+          <view class="tool-item" bindtap="openCases">
+            <text class="tool-icon">📋</text>
+            <text class="tool-name">案例分析</text>
+          </view>
+          <view class="tool-item" bindtap="openTheory">
+            <text class="tool-icon">📖</text>
+            <text class="tool-name">理论学习</text>
+          </view>
+          <view class="tool-item" bindtap="openDebate">
+            <text class="tool-icon">💭</text>
+            <text class="tool-name">观点讨论</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

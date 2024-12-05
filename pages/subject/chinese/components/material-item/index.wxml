@@ -1,0 +1,10 @@
+<view class="material-item">
+  <view class="material-info">
+    <text class="material-title">{{item.title}}</text>
+    <text class="material-meta">{{item.teacher}} · {{item.uploadTime}}</text>
+  </view>
+  <view class="material-actions">
+    <button class="action-btn" bindtap="onPreview">预览</button>
+    <button class="action-btn" bindtap="onDownload">下载</button>
+  </view>
+</view> 

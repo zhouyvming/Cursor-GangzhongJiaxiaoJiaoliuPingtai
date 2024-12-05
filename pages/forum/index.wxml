@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="forum-list">
+    <!-- 帖子列表 -->
+    <block wx:for="{{posts}}" wx:key="id">
+      <view class="post-item">
+        <view class="post-header">
+          <text class="post-title">{{item.title}}</text>
+          <text class="post-time">{{item.createTime}}</text>
+        </view>
+        <view class="post-content">{{item.content}}</view>
+        <view class="post-footer">
+          <view class="post-author">{{item.authorName}}</view>
+          <view class="post-actions">
+            <text class="action-item">
+              <text class="count">{{item.commentCount}}</text> 评论
+            </text>
+            <text class="action-item">
+              <text class="count">{{item.likeCount}}</text> 点赞
+            </text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 加载状态 -->
+    <!-- <view class="loading-tip" wx:if="{{isLoading}}">
+      <text>加载中...</text>
+    </view> -->
+    <!-- <view class="loading-tip" wx:if="{{!hasMore && posts.length > 0}}">
+      <text>没有更多内容了</text>
+    </view> -->
+  </view>
+
+  <!-- 浮动发帖按钮 -->
+  <view class="float-post-btn" bindtap="showPostModal">
+    <text class="post-icon">+</text>
+  </view>
+
+  <!-- 发帖弹窗 -->
+  <view class="post-modal" wx:if="{{showPostModal}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text>发布帖子</text>
+        <text class="close" bindtap="hidePostModal">×</text>
+      </view>
+      <view class="modal-body">
+        <input class="modal-input" 
+               placeholder="请输入标题" 
+               model:value="{{newPost.title}}"/>
+        <textarea class="modal-textarea" 
+                  placeholder="请输入内容" 
+                  model:value="{{newPost.content}}"/>
+        <button class="confirm-post" bindtap="submitPost">发布</button>
+      </view>
+    </view>
+  </view>
+</view>

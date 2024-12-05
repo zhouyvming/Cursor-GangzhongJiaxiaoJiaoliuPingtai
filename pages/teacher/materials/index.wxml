@@ -1,0 +1,61 @@
+<!--pages/teacher/materials/index.wxml-->
+<view class="container">
+  <!-- 顶部操作栏 -->
+  <view class="header">
+    <view class="left-section">
+      <view class="back-btn" bindtap="goBack">
+        <text class="back-icon">←</text>
+        <text>返回</text>
+      </view>
+    </view>
+    <view class="search-box">
+      <input class="search-input" 
+             placeholder="搜索资料" 
+             bindinput="onSearch"/>
+    </view>
+    <button class="upload-btn" bindtap="showUploadModal">上传资料</button>
+  </view>
+
+  <!-- 资料列表 -->
+  <view class="materials-list">
+    <block wx:for="{{materials}}" wx:key="id">
+      <view class="material-item">
+        <view class="material-info">
+          <view class="material-title">{{item.title}}</view>
+          <view class="material-desc">{{item.description}}</view>
+          <view class="material-meta">
+            <text class="upload-time">上传时间：{{item.uploadTime}}</text>
+            <text class="upload-by">上传者：{{item.teacherName}}</text>
+          </view>
+        </view>
+        <view class="material-actions">
+          <button class="action-btn" bindtap="previewFile" data-url="{{item.fileUrl}}">预览</button>
+          <button class="action-btn" bindtap="downloadFile" data-url="{{item.fileUrl}}">下载</button>
+          <button class="action-btn delete" bindtap="deleteMaterial" data-id="{{item.id}}">删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 上传资料弹窗 -->
+  <view class="upload-modal" wx:if="{{showUploadModal}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text>上传资料</text>
+        <text class="close" bindtap="hideUploadModal">×</text>
+      </view>
+      <view class="modal-body">
+        <input class="modal-input" 
+               placeholder="资料标题" 
+               model:value="{{newMaterial.title}}"/>
+        <textarea class="modal-textarea" 
+                  placeholder="资料描述" 
+                  model:value="{{newMaterial.description}}"/>
+        <button class="select-file" bindtap="selectFile">
+          {{newMaterial.fileName || '选择文件'}}
+        </button>
+        <button class="confirm-upload" bindtap="confirmUpload">确认上传</button>
+      </view>
+    </view>
+  </view>
+</view>

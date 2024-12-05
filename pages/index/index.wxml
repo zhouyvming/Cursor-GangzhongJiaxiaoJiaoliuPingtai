@@ -1,0 +1,16 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="welcome">欢迎使用港中家校交流平台</text>
+    <text class="subtitle">选择您需要的科目</text>
+  </view>
+
+  <view class="subject-grid">
+    <view class="subject-item" wx:for="{{subjects}}" wx:key="id" bindtap="goToSubject" data-id="{{item.id}}">
+      <view class="subject-box" data-subject="{{item.code}}">
+        <text>{{item.name}}</text>
+        <text class="subject-desc">{{item.fullName}}</text>
+      </view>
+    </view>
+  </view>
+</view>

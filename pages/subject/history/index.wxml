@@ -1,0 +1,36 @@
+<!--pages/subject/history/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">{{name}}</text>
+  </view>
+
+  <!-- 学生功能区 -->
+  <block wx:if="{{userInfo.role === 'student'}}">
+    <view class="content">
+      <!-- 历史学习工具 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">历史学习工具</text>
+        </view>
+        <view class="tools-grid">
+          <view class="tool-item" bindtap="openTimeline">
+            <text class="tool-icon">📅</text>
+            <text class="tool-name">历史时间轴</text>
+          </view>
+          <view class="tool-item" bindtap="openFigures">
+            <text class="tool-icon">👥</text>
+            <text class="tool-name">历史人物</text>
+          </view>
+          <view class="tool-item" bindtap="openEvents">
+            <text class="tool-icon">📜</text>
+            <text class="tool-name">重大事件</text>
+          </view>
+          <view class="tool-item" bindtap="openCulture">
+            <text class="tool-icon">🏛️</text>
+            <text class="tool-name">文化遗产</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

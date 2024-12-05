@@ -1,0 +1,12 @@
+.container {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.header {
+  background: #fff;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+/* ... 其他共用样式 ... */ 

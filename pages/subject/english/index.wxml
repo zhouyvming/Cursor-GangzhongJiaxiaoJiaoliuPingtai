@@ -1,0 +1,64 @@
+<!--pages/subject/english/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">{{name}}</text>
+  </view>
+
+  <!-- 教师功能区 -->
+  <block wx:if="{{userInfo.role === 'teacher'}}">
+    <view class="content">
+      <!-- 上传资料按钮 -->
+      <button class="upload-btn" bindtap="showUploadModal">
+        <text class="icon">+</text>
+        <text>上传资料</text>
+      </button>
+
+      <!-- 资料列表 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">教学资料</text>
+          <text class="section-more" bindtap="goToAllMaterials">查看全部</text>
+        </view>
+        <view class="material-list">
+          <material-item 
+            wx:for="{{materials}}" 
+            wx:key="id"
+            item="{{item}}"
+            bind:preview="previewMaterial"
+            bind:download="downloadMaterial"
+          />
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 学生功能区 -->
+  <block wx:if="{{userInfo.role === 'student'}}">
+    <view class="content">
+      <!-- 英语学习工具 -->
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">英语学习工具</text>
+        </view>
+        <view class="tools-grid">
+          <view class="tool-item" bindtap="openDictionary">
+            <text class="tool-icon">📚</text>
+            <text class="tool-name">词典查询</text>
+          </view>
+          <view class="tool-item" bindtap="openPronunciation">
+            <text class="tool-icon">🔊</text>
+            <text class="tool-name">发音练习</text>
+          </view>
+          <view class="tool-item" bindtap="openListening">
+            <text class="tool-icon">🎧</text>
+            <text class="tool-name">听力训练</text>
+          </view>
+          <view class="tool-item" bindtap="openTranslation">
+            <text class="tool-icon">🔄</text>
+            <text class="tool-name">翻译助手</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

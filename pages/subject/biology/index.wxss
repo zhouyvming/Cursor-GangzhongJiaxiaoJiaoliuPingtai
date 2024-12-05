@@ -1,0 +1,6 @@
+@import "../common/index.wxss";
+
+/* 生物特色样式 */
+.tool-item[data-tool="microscope"] {
+  background: #fff7e6;
+}

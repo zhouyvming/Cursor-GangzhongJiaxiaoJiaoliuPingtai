@@ -1,0 +1,41 @@
+.material-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+}
+
+.material-info {
+  flex: 1;
+}
+
+.material-title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.material-meta {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.material-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.action-btn {
+  min-width: 120rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  background: #fff;
+  color: #3a7afe;
+  border: 1rpx solid #3a7afe;
+  border-radius: 28rpx;
+  padding: 0 20rpx;
+} 

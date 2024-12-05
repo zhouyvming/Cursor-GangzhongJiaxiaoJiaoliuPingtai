@@ -1,0 +1,124 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-info">
+    <view class="user-info-content">
+      <block wx:if="{{!userInfo}}">
+        <!-- 未登录时显示登录界面 -->
+        <view class="login-box">
+          <view class="title">选择登录身份</view>
+          
+          <!-- 角色选择按钮组 -->
+          <view class="role-buttons">
+            <button class="role-btn {{role === 'teacher' ? 'active' : ''}}" 
+                    bindtap="selectRole" 
+                    data-role="teacher">我是老师</button>
+            <button class="role-btn {{role === 'parent' ? 'active' : ''}}" 
+                    bindtap="selectRole" 
+                    data-role="parent">我是家长</button>
+            <button class="role-btn {{role === 'student' ? 'active' : ''}}" 
+                    bindtap="selectRole" 
+                    data-role="student">我是学生</button>
+          </view>
+          
+          <!-- 登录表单 -->
+          <view class="login-form">
+            <view class="form-item">
+              <input class="input" 
+                     type="text" 
+                     placeholder="请输入用户名" 
+                     bindinput="inputUsername"/>
+            </view>
+            <view class="form-item">
+              <input class="input" 
+                     type="password" 
+                     placeholder="请输入密码" 
+                     bindinput="inputPassword"/>
+            </view>
+            <button class="login-btn" bindtap="handleLogin">登录</button>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="avatar">
+          <text class="avatar-text">{{userInfo.name[0]}}</text>
+        </view>
+        <view class="user-text">
+          <text class="username">{{userInfo.name}}</text>
+          <text class="subject-tag">{{userInfo.subject}}老师</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="stats" wx:if="{{userInfo}}">
+    <view class="stat-item">
+      <text class="stat-num">--</text>
+      <text class="stat-label">发布</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">--</text>
+      <text class="stat-label">收藏</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">--</text>
+      <text class="stat-label">获赞</text>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-list" wx:if="{{userInfo}}">
+    <view class="menu-item" bindtap="goToProfile">
+      <view class="menu-left">
+        <text class="iconfont icon-user"></text>
+        <text class="menu-text">个人资料</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="goToClass">
+      <view class="menu-left">
+        <text class="iconfont icon-class"></text>
+        <text class="menu-text">我的班级</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <!-- <view class="menu-item" bindtap="goToMyAnswers">
+      <view class="menu-left">
+        <text class="iconfont icon-answer"></text>
+        <text class="menu-text">我的问答</text>
+      </view>
+      <text class="arrow">></text>
+    </view> -->
+
+    <view class="menu-item" bindtap="goToMyPosts">
+      <view class="menu-left">
+        <text class="iconfont icon-post"></text>
+        <text class="menu-text">我的发布</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="goToMyCollections">
+      <view class="menu-left">
+        <text class="iconfont icon-star"></text>
+        <text class="menu-text">我的收藏</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="goToSettings">
+      <view class="menu-left">
+        <text class="iconfont icon-settings"></text>
+        <text class="menu-text">设置</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+
+    <!-- 退出登录按钮 -->
+    <view class="logout-section">
+      <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+    </view>
+  </view>
+</view> 
